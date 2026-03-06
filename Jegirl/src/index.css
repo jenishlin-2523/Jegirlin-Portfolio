@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-brand-bg: #F9F9F8;
+  --color-brand-dark: #101010;
+  --color-brand-accent: #E04027;
+  --color-brand-lavender: #857AB1;
+  --color-brand-grey: #F0F0EE;
+  --color-brand-muted: #6B6B6B;
+
+  --font-heading: 'Archivo Black', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-body: 'Inter', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: auto;
+  /* Lenis handles smooth scrolling */
+  background-color: #F9F9F8;
+  color: #101010;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #F9F9F8;
+  color: #101010;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F9F9F8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E04027;
+  border-radius: 2px;
+}
+
+/* Selection */
+::selection {
+  background: #E04027;
+  color: #F9F9F8;
+}
+
+.font-heading {
+  font-family: 'Archivo Black', sans-serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Nav underline grow */
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  color: #101010;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 1.5px;
+  background: #E04027;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Magnetic button base */
+.btn-magnetic {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+/* Marquee */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-inner {
+  display: flex;
+  width: max-content;
+  animation: marquee 20s linear infinite;
+}
+
+.marquee-inner:hover {
+  animation-play-state: paused;
+}
+
+/* Section reveal */
+.reveal-section {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Thin border utility */
+.border-half {
+  border-width: 0.5px;
+}
+
+/* Count-up numbers */
+.count-num {
+  font-family: 'Archivo Black', sans-serif;
+  color: #E04027;
+  line-height: 1;
+}
+
+/* Glass badge */
+.glass-badge {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(249, 249, 248, 0.15);
+  border: 0.5px solid rgba(249, 249, 248, 0.4);
+}
+
+/* Bento card hover */
+.bento-card {
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.bento-card:hover {
+  background-color: #EBEBEA;
+  box-shadow: 0 4px 24px rgba(16, 16, 16, 0.08);
+}
+
+.bento-card:hover .skill-icon {
+  transform: scale(1.05);
+}
+
+.skill-icon {
+  transition: transform 0.25s ease;
+}
+
+/* Project card */
+.project-card-img {
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.project-card:hover .project-card-img {
+  transform: scale(1.05);
+}
+
+/* Scroll reveal animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
