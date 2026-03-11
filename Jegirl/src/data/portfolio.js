@@ -8,8 +8,8 @@ export const personal = {
     email: "jegarlinathirsh@gmail.com",
     phone: "+91 63839 49323",
     linkedin: "https://linkedin.com/in/jegarlinathirsh",
-    github: "https://github.com/jegarlinathirsh",
-    portfolio: "https://jegarlin.me",
+    github: "https://github.com/jegarlin",
+    portfolio: "https://jegarlin.vercel.app",
 };
 
 export const about = `I'm a curious mind at the intersection of data and marketing — passionate about turning 
@@ -80,7 +80,7 @@ export const projects = [
             "Dynamic PDF report generation for meal schedules"
         ],
         image: null, // generated placeholder
-        link: "https://github.com/thanuSiva18/meal-prep-planner" // Update with your actual repo
+        link: "https://github.com/jegirlin/Meal_prep" // Update with your actual repo
     }
 ];
 
@@ -121,3 +121,4 @@ export const stats = [
     { label: "Certifications", value: 1 },
     { label: "Months of Experience", value: 6 },
 ];
+
